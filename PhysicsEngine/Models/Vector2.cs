@@ -106,6 +106,17 @@ namespace PhysicsEngine
         }
 
         /// <summary>
+        /// Скалярное произведение векторов
+        /// </summary>
+        /// <param name="vector1">Первый вектор</param>
+        /// <param name="vector2">Второй вектор</param>
+        /// <returns>Возвращает результат скалярного произведение двух векторов</returns>
+        public static double operator *(Vector2 vector1, Vector2 vector2)
+        {
+            return vector1.x * vector2.x + vector1.y * vector2.y;
+        }
+
+        /// <summary>
         /// Деление вектора на число
         /// </summary>
         /// <param name="vec">Вектор</param>
@@ -135,7 +146,6 @@ namespace PhysicsEngine
             float result = (float)Math.Sqrt(Math.Pow(this.x, 2) + Math.Pow(this.y, 2));
             return result;
         }
-
 
         /// <summary>
         /// Нормирование

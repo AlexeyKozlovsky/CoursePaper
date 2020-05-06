@@ -6,21 +6,42 @@ using System.Threading.Tasks;
 
 namespace PhysicsEngine
 {
+    /// <summary>
+    /// Класс, описывающий физическое поле
+    /// </summary>
     [Serializable]
-    public class PhysField
+    class PhysField
     {
-        private float heightOfPanel;
-        private float widthOfPanel;
+        private float height;               // Высота поля
+        private float width;                // Ширина поля
+        private List<PhysObject> objs;      // Список физических объектов на поле
 
-        public float HeightOfPanel { get { return heightOfPanel; } set { heightOfPanel = value; } }
-        public float WidthOfPanel { get { return widthOfPanel; } set { widthOfPanel = value; } }
+        /// <summary>
+        /// Высота поля
+        /// </summary>
+        public float Height { get { return height; } set { height = value; } }
 
-        private List<PhysObject> objs = new List<PhysObject>();
+        /// <summary>
+        /// Ширина поля
+        /// </summary>
+        public float Width { get { return width; } set { width = value; } }
 
+        /// <summary>
+        /// Список физических объектов, находящихся на поле
+        /// </summary>
         public List<PhysObject> Objs { get { return objs; } }
+
+        /// <summary>
+        /// Добавляет объект на поле
+        /// </summary>
+        /// <param name="obj">Объект</param>
         public void Add(PhysObject obj) => objs.Add(obj);
 
-
+        /// <summary>
+        /// Определяет коллизию двух объектов
+        /// </summary>
+        /// <param name="obj1">Первый объект</param>
+        /// <param name="obj2">Второй объект</param>
         private void Collision(PhysObject obj1, PhysObject obj2)
         {
             float dx = obj2.Position.X - obj1.Position.X;
@@ -83,20 +104,20 @@ namespace PhysicsEngine
             {
 
                 if (objs[i].Position.X + objs[i].Velocity.X - objs[i].Width/2 <= 0 || 
-                    objs[i].Position.X + objs[i].Velocity.X >= widthOfPanel - objs[i].Width/2)
+                    objs[i].Position.X + objs[i].Velocity.X >= width - objs[i].Width/2)
                 {
                     objs[i].Velocity = new Vector2(-objs[i].Velocity.X, objs[i].Velocity.Y);
                     if (objs[i].Position.X + objs[i].Velocity.X - objs[i].Width/2 <= 0) 
                         objs[i].Position = new Vector2(objs[i].Width/2, objs[i].Position.Y);
-                    else if (objs[i].Position.X + objs[i].Velocity.X >= widthOfPanel - objs[i].Width/2)
-                        objs[i].Position = new Vector2(widthOfPanel - objs[i].Width/2, objs[i].Position.Y);
+                    else if (objs[i].Position.X + objs[i].Velocity.X >= width - objs[i].Width/2)
+                        objs[i].Position = new Vector2(width - objs[i].Width/2, objs[i].Position.Y);
                 }
                 if (objs[i].Position.Y + objs[i].Velocity.Y - objs[i].Height/2 <= 0 || 
-                    objs[i].Position.Y + objs[i].Velocity.Y >= heightOfPanel - objs[i].Height/2)
+                    objs[i].Position.Y + objs[i].Velocity.Y >= height - objs[i].Height/2)
                 {
-                    if (objs[i].Position.Y + objs[i].Velocity.Y >= heightOfPanel - objs[i].Height/2)
+                    if (objs[i].Position.Y + objs[i].Velocity.Y >= height - objs[i].Height/2)
                     {
-                        objs[i].Position = new Vector2(objs[i].Position.X, heightOfPanel - objs[i].Height/2);
+                        objs[i].Position = new Vector2(objs[i].Position.X, height - objs[i].Height/2);
                     }
                     else if (objs[i].Position.Y + objs[i].Velocity.Y - objs[i].Height/2 <= 0) 
                         objs[i].Position = new Vector2(objs[i].Position.X, objs[i].Height/2);
