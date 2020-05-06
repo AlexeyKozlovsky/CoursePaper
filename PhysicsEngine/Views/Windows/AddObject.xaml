@@ -1,0 +1,80 @@
+﻿<Window x:Class="PhysicsEngine.Views.Windows.AddObject"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PhysicsEngine.Views.Windows"
+        mc:Ignorable="d"
+        Title="AddObject" Height="400" Width="500" Background="#FFF3E0" ResizeMode="NoResize">
+    <Window.Resources>
+        <ResourceDictionary Source="..\..\Dictionaries\Dictionary.xaml"/>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.4*"/>
+            <ColumnDefinition Width="0.3*"/>
+            <ColumnDefinition Width="0.2*"/>
+            <ColumnDefinition Width="0.3*"/>
+            <ColumnDefinition Width="0.2*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Style="{StaticResource lableStyle}" Content="Добавить объект" 
+               Opacity="1" Grid.ColumnSpan="5"
+               HorizontalAlignment="Center" FontSize="25"/>
+        <Label Style="{StaticResource lableStyle}" Content="Имя" Opacity="1" Grid.Row="1"
+               HorizontalAlignment="Center" FontSize="20"/>
+        <Label Style="{StaticResource lableStyle}" Content="Масса" Opacity="1" Grid.Row="2"
+               HorizontalAlignment="Center" FontSize="20"/>
+        <Label Style="{StaticResource lableStyle}" Content="Положение" Opacity="1" Grid.Row="4"
+               HorizontalAlignment="Center" FontSize="20"/>
+        <Label Style="{StaticResource lableStyle}" Content="Скорость" Opacity="1" Grid.Row="5"
+               HorizontalAlignment="Center" FontSize="20"/>
+        <Label Style="{StaticResource lableStyle}" Content="Радиус" Opacity="1" Grid.Row="3"
+               HorizontalAlignment="Center" FontSize="20"/>
+
+        <TextBox x:Name="nameTextBox" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"
+                 Style="{StaticResource textBoxStyle}" Margin="10"/>
+        <TextBox x:Name="massTextBox" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3"
+                 Style="{StaticResource textBoxStyle}" Margin="10"/>
+        <TextBox x:Name="radiusTextBox" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3"
+                 Style="{StaticResource textBoxStyle}" Margin="10"/>
+        <TextBox x:Name="positionXTextBox" Grid.Row="4" Grid.Column="1" 
+                 Style="{StaticResource textBoxStyle}" Margin="10"/>
+        <TextBox x:Name="positionYTextBox" Grid.Row="4" Grid.Column="3" 
+                 Style="{StaticResource textBoxStyle}" Margin="10"/>
+        <TextBox x:Name="velocityXTextBox" Grid.Row="5" Grid.Column="1" 
+                 Style="{StaticResource textBoxStyle}" Margin="10"/>
+        <TextBox x:Name="velocityYTextBox" Grid.Row="5" Grid.Column="3" 
+                 Style="{StaticResource textBoxStyle}" Margin="10"/>
+        <Button x:Name="addButton" Template="{StaticResource btnTemplate}"
+                Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="2" Margin="5"
+                Content="Добавить"  FontSize="20" Click="addButton_Click"/>
+        <Button x:Name="cancelButton" Template="{StaticResource btnTemplate}"
+                Grid.Column="3" Grid.Row="6" Grid.ColumnSpan="2" Margin="5"
+                Content="Отмена"  FontSize="20" Click="cancelButton_Click"/>
+
+        <Label Style="{StaticResource lableStyle}" Content="units" Opacity="1"
+               Grid.Row="2" Grid.Column="4" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label Style="{StaticResource lableStyle}" Content="px" Opacity="1"
+               Grid.Row="3" Grid.Column="4" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label Style="{StaticResource lableStyle}" Content="px" Opacity="1" 
+               Grid.Row="4" Grid.Column="4" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label Style="{StaticResource lableStyle}" Content="px" Opacity="1" 
+               Grid.Row="4" Grid.Column="2" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label Style="{StaticResource lableStyle}" Content="px/sec" Opacity="1" 
+               Grid.Row="5" Grid.Column="4" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label Style="{StaticResource lableStyle}" Content="px/sec" Opacity="1" 
+               Grid.Row="5" Grid.Column="2" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+
+    </Grid>
+</Window>

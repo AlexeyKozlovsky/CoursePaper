@@ -10,7 +10,7 @@ namespace PhysicsEngine
     /// Класс, описывающий физический объект в форме эллипса
     /// </summary>
     [Serializable]
-    class PhysEllipse : PhysObject
+    public class PhysEllipse : PhysObject
     {
         /// <summary>
         /// Создает физический объект в форме эллписа в нулевым ускорением, скоростью и позицией.

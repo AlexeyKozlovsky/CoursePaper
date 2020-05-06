@@ -5,8 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PhysicsEngine"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="600" Width="800" Background="#FFF3E0" ResizeMode="NoResize">
+    <Window.Resources>
+        <ResourceDictionary Source="../../Dictionaries/Dictionary.xaml"/>
+    </Window.Resources>
+
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="8*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Label x:Name="signLabel" Style="{StaticResource titleLableStyle}" HorizontalContentAlignment="Center"
+               VerticalContentAlignment="Center"/>
+        <Button x:Name="nextButton" Content="Далее" Template="{StaticResource btnTemplate}" Grid.Row ="1"
+                Click="nextButton_Click" Margin="300, 2" FontSize="25"/>
     </Grid>
+    
 </Window>

@@ -55,7 +55,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Dictionaries\Dictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Pages\Momentum.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\AddObject.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -85,6 +93,9 @@
     <Compile Include="Models\Vector2.cs" />
     <Compile Include="Views\Pages\Momentum.xaml.cs">
       <DependentUpon>Momentum.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\AddObject.xaml.cs">
+      <DependentUpon>AddObject.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Windows\Help.xaml.cs">
       <DependentUpon>Help.xaml</DependentUpon>
@@ -127,8 +138,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Dictionaries\" />
     <Folder Include="Models\Exceptions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\background.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

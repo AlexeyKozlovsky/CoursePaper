@@ -11,7 +11,7 @@ namespace PhysicsEngine
     /// Класс, описывающий физическое поле
     /// </summary>
     [Serializable]
-    class PhysField
+    public class PhysField
     {
         private float height;               // Высота поля
         private float width;                // Ширина поля

@@ -5,8 +5,73 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PhysicsEngine.Views.Windows"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="600" Width="800" Background="#FFF3E0" ResizeMode="NoResize">
+    <Window.Resources>
+        <ResourceDictionary Source="../../Dictionaries/Dictionary.xaml"/>
+    </Window.Resources>
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Canvas Grid.ColumnSpan="6" Grid.RowSpan="6">
+            <Canvas.Background>
+                <ImageBrush ImageSource="..\..\Images\background.jpg" 
+                            Stretch="Fill" Opacity="0.3"/>
+            </Canvas.Background>
+        </Canvas>
+        <Frame x:Name="frame" NavigationUIVisibility="Hidden" Grid.ColumnSpan="6" Grid.RowSpan="6"/>
         
+        <!--Кнопки главного меню-->
+        <Button x:Name="momentumBtn" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="4" Grid.RowSpan="2" 
+                Template="{StaticResource btnTemplate}" FontSize="30" Margin="20, 35"
+                Click="momentumBtn_Click" Content="Сохранение импульса"/>
+        <Button x:Name="helpBtn" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="4" Grid.RowSpan="2"
+                Template="{StaticResource btnTemplate}" FontSize="30" Margin="20, 35"
+                Click="helpBtn_Click" Content="Справка" />
+        <Button x:Name="exitBtn" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="4" Grid.RowSpan="2"
+                Template="{StaticResource btnTemplate}" FontSize="30" Margin="20, 35"
+                Click="exitBtn_Click" Content="Выход" />
+
+        <!--Кнопки во время демонстрации-->
+        <Button x:Name="playBtn" Grid.Column="0" Grid.Row="1" 
+                Template="{StaticResource otherButtonsTemplate}" Visibility="Hidden"
+                Click="playBtn_Click" Content="Старт" />
+        <Button x:Name="stopBtn" Grid.Column="0" Grid.Row="2" 
+                Template="{StaticResource otherButtonsTemplate}" Visibility="Hidden"
+                Click="stopBtn_Click" Content="Стоп"  IsEnabled="True"/>
+        <Button x:Name="settingsBtn" Grid.Column="0" Grid.Row="3" 
+                Template="{StaticResource otherButtonsTemplate}" Visibility="Hidden"
+                Click="settingsBtn_Click" Content="Настройки"  IsEnabled="True"/>
+        <Button x:Name="hideBtn" Grid.Column="6" Grid.Row="3" 
+                Template="{StaticResource otherButtonsTemplate}" Visibility="Hidden"
+                Click="hideBtn_Click" Content="Скрыть" />
+        <Button x:Name="menuBtn" Grid.Column="0" Grid.Row="4" 
+                Template="{StaticResource otherButtonsTemplate}" Visibility="Hidden"
+                Click="menuBtn_Click" Content="Меню" />
+        <Button x:Name="objsBtn" Grid.Column="6" Grid.Row="1" 
+                Template="{StaticResource otherButtonsTemplate}" Visibility="Hidden"
+                Click="objsBtn_Click" Content="Объекты" />
+        <Button x:Name="addBtn" Grid.Column="6" Grid.Row="2" 
+                Template="{StaticResource otherButtonsTemplate}" Visibility="Hidden"
+                Click="addBtn_Click" Content="Добавить" />
+
+        <!--Дерево объектов-->
+        <ListBox x:Name="listBox" Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="2" Grid.RowSpan="4"
+                 Style="{StaticResource listBoxStyle}" Visibility="Hidden" SelectionChanged="listBox_SelectionChanged"/>
     </Grid>
+
 </Window>
