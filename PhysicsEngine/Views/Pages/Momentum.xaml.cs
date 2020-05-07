@@ -30,6 +30,8 @@ namespace PhysicsEngine.Views.Pages
         private float gravity;                      // ускорение свободного падения
         private int selected;                       // выбранный объект
 
+        public string NameOfObj { get; set; }   // Имя последнего добавленного объекта
+
 
         // СВОЙСТВА
 
@@ -91,18 +93,17 @@ namespace PhysicsEngine.Views.Pages
         /// <summary>
         /// Останавливает симуляцию
         /// </summary>
-        internal void StopSimualtion() => timer.Stop();
+        internal void StopSimulation() => timer.Stop();
 
         /// <summary>
         /// Добавляет физический объект на канвас
         /// </summary>
         /// <param name="obj">Объект</param>
         /// <param name="name">Имя объекта</param>
-        internal void AddToCanvas(PhysEllipse obj, string name)
+        internal void AddToCanvas(PhysEllipse obj)
         {
             obj.ApplyForce(new Vector2(0, Gravity * obj.Mass));                         // Добавляем силу гравитации объекту
-            field.Add(obj);                                                             // Добавляем объект на поле
-            
+
             SolidColorBrush brush = new SolidColorBrush(Color.FromRgb(255, 87, 34));    // Создаем кисть цвета будущей формы объекта
             Ellipse ellipse = new Ellipse();                                            // Создаем форму объекта
             ellipse.Width = obj.Width;                                  // Задаем ширину форме объекта равную ширине объекта

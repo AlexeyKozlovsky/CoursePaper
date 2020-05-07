@@ -12,16 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PhysicsEngine.Views.Windows;
 
 namespace PhysicsEngine
 {
     /// <summary>
     /// Класс стартового окна программы
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class StartWindow : Window
     {
         // Конструктор класса стартового окна программы
-        public MainWindow()
+        public StartWindow()
         {
             InitializeComponent();          // Инициализация компонентов
             InitText();                     // Инициализация текста

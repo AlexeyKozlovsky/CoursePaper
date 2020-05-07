@@ -5,8 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PhysicsEngine.Views.Windows"
         mc:Ignorable="d"
-        Title="Settings" Height="450" Width="800">
+        Title="Settings" Height="300" Width="500" Background="#FFF3E0" ResizeMode="NoResize">
+    
+    <Window.Resources>
+        <ResourceDictionary Source="../../Dictionaries/Dictionary.xaml"/>
+    </Window.Resources>
+    
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1.5*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Label Style="{StaticResource lableStyle}" Content="Настройки" Opacity="1" FontSize="30" Grid.ColumnSpan="2"
+               HorizontalAlignment="Center" Margin="153,0,153.6,0.4" Width="187"/>
+        <Label Style="{StaticResource lableStyle}" Content="Ускорение св. падения" Opacity="1"
+               FontSize="16" HorizontalContentAlignment="Center" Grid.Row="1" VerticalAlignment="Center"
+               Height="39" Margin="0,25.6,2.6,25.8"/>
+        <TextBox x:Name="gravityTextBox" Grid.Row="1" Grid.Column="1" Margin="20" 
+                 Style="{StaticResource textBoxStyle}"/>
+
+        <Button x:Name="acceptButton" Template="{StaticResource btnTemplate}" Grid.Column="1" Grid.Row="2"
+                FontSize="20" Margin="20" Content="Принять" Click="acceptButton_Click"/>
+
     </Grid>
 </Window>

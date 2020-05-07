@@ -59,6 +59,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Pages\Menu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Pages\Momentum.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -91,6 +95,9 @@
     <Compile Include="Models\PhysField.cs" />
     <Compile Include="Models\PhysObject.cs" />
     <Compile Include="Models\Vector2.cs" />
+    <Compile Include="Views\Pages\Menu.xaml.cs">
+      <DependentUpon>Menu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Pages\Momentum.xaml.cs">
       <DependentUpon>Momentum.xaml</DependentUpon>
     </Compile>

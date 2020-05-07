@@ -33,6 +33,11 @@ namespace PhysicsEngine
         public List<PhysObject> Objs { get { return objs; } }
 
         /// <summary>
+        /// Создает поле для физических объектов
+        /// </summary>
+        public PhysField() => this.objs = new List<PhysObject>();
+
+        /// <summary>
         /// Добавляет объект на поле
         /// </summary>
         /// <param name="obj">Объект</param>

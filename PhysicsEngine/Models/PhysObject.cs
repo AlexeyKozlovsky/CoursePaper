@@ -11,7 +11,7 @@ namespace PhysicsEngine
     /// Базовый класс для описания физического объекта
     /// </summary>
     [Serializable]
-    abstract class PhysObject
+    public class PhysObject
     {
         protected Vector2 position;         // Положение 
         protected Vector2 velocity;         // Скорость
